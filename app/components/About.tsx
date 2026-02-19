@@ -2,72 +2,116 @@ import Image from "next/image";
 
 export default function About() {
     return (
-        <div className="h-screen flex items-center px-8">
-            <div className="flex flex-col gap-4 max-w-md">
-                {/* University Logos */}
-                <div className="flex w-full gap-12 ml-2 mb-4">
+        <div className="flex flex-col gap-8">
+            {/* Profile Section */}
+            <div className="bg-white overflow-hidden border-4 border-black">
+                <div className="relative aspect-4/5 w-full overflow-hidden">
                     <Image
-                        src="/logos/uw_logo.png"
-                        alt="University of Waterloo"
-                        width={75}
-                        height={75}
-                    />
-                    <Image
-                        src="/logos/wlu_logo.png"
-                        alt="Wilfrid Laurier University"
-                        width={75}
-                        height={75}
+                        src="/headshots/headshot2.png"
+                        alt="Headshot"
+                        fill
+                        className="object-cover"
                     />
                 </div>
-                {/* Name and Description */}
-                <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-tight">
-                    Michael Ferreira
-                </h1>
-                <p className="text-xl md:text-2xl font-bold italic">
-                    Software Engineer, Developer, and Student
-                </p>
-                <p className="text-base text-black/90">
-                    I'm a Computer Science and Business Administration double
-                    degree student at the University of Waterloo and Wilfrid
-                    Laurier University
-                </p>
-                <div className="flex gap-4 mt-2">
-                    <a
-                        href="https://github.com/michaeljf07"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-black hover:opacity-60 transition-opacity"
-                        aria-label="GitHub">
-                        <GitHubIcon className="w-6 h-6" />
-                    </a>
-                    <a
-                        href="https://linkedin.com/in/michael-j-ferreira"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-black hover:opacity-60 transition-opacity"
-                        aria-label="LinkedIn">
-                        <LinkedInIcon className="w-6 h-6" />
-                    </a>
-                    <a
-                        href="https://instagram.com/michael.ferreira07"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-black hover:opacity-60 transition-opacity"
-                        aria-label="Instagram">
-                        <InstagramIcon className="w-6 h-6" />
-                    </a>
+                <div className="pt-6 bg-black text-white">
+                    <h2 className="magazine-heading text-3xl md:text-4xl mb-2">
+                        Michael Ferreira
+                    </h2>
+                    <p className="magazine-body text-sm text-white/70 uppercase tracking-widest">
+                        Software Engineer
+                    </p>
                 </div>
-                {/* Degrees */}
-                <div className="flex gap-4">
-                    <div className="text-center border border-black px-4 py-2">
-                        <p className="text-sm">CS @ University of Waterloo</p>
+            </div>
+
+            {/* Bio */}
+            <div className="border-l-4 border-white pl-6">
+                <p className="magazine-body text-sm sm:text-base leading-relaxed text-white/80 italic">
+                    "I'm a Computer Science and Business double degree student
+                    at the University of Waterloo and Wilfrid Laurier
+                    University. I love tinkering and making cool things."
+                </p>
+            </div>
+
+            {/* Education */}
+            <div className="border border-white/20 p-6">
+                <h3 className="magazine-heading text-xl sm:text-3xl mb-4 text-white tracking-widest">
+                    Education
+                </h3>
+                <div className="flex items-center gap-6 mb-6 pb-6 border-b border-white/10">
+                    <div className="w-20 h-20 p-2 flex items-center justify-center">
+                        <Image
+                            src="/logos/uw_logo.png"
+                            alt="University of Waterloo"
+                            width={100}
+                            height={100}
+                            className="w-full h-full object-cover"
+                        />
                     </div>
-                    <div className="text-center border border-black px-4 py-2">
-                        <p className="text-sm">
-                            BBA @ Wilfrid Laurier University
+                    <div className="w-20 h-20 p-2 flex items-center justify-center">
+                        <Image
+                            src="/logos/wlu_logo.png"
+                            alt="Wilfrid Laurier University"
+                            width={100}
+                            height={100}
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+                </div>
+                <div className="space-y-4">
+                    <div className="border-l-4 border-white pl-4">
+                        <p className="magazine-body text-sm text-white font-semibold">
+                            Computer Science
+                        </p>
+                        <p className="magazine-body text-xs text-white/60 mt-1 uppercase tracking-wider">
+                            University of Waterloo
+                        </p>
+                    </div>
+                    <div className="border-l-4 border-white/40 pl-4">
+                        <p className="magazine-body text-sm text-white font-semibold">
+                            Business Administration
+                        </p>
+                        <p className="magazine-body text-xs text-white/60 mt-1 uppercase tracking-wider">
+                            Wilfrid Laurier University
                         </p>
                     </div>
                 </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="grid grid-cols-3 gap-0 border border-white/20">
+                <a
+                    href="https://github.com/michaeljf07"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center justify-center bg-black hover:bg-white text-white hover:text-black transition-all duration-300 p-6 border-r border-white/20"
+                    aria-label="GitHub">
+                    <GitHubIcon className="w-6 h-6 mb-2" />
+                    <span className="magazine-body text-[10px] uppercase tracking-wider">
+                        GitHub
+                    </span>
+                </a>
+                <a
+                    href="https://linkedin.com/in/michael-j-ferreira"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center justify-center bg-black hover:bg-white text-white hover:text-black transition-all duration-300 p-6 border-r border-white/20"
+                    aria-label="LinkedIn">
+                    <LinkedInIcon className="w-6 h-6 mb-2" />
+                    <span className="magazine-body text-[10px] uppercase tracking-wider">
+                        LinkedIn
+                    </span>
+                </a>
+                <a
+                    href="https://instagram.com/michael.ferreira07"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center justify-center bg-black hover:bg-white text-white hover:text-black transition-all duration-300 p-6"
+                    aria-label="Instagram">
+                    <InstagramIcon className="w-6 h-6 mb-2" />
+                    <span className="magazine-body text-[10px] uppercase tracking-wider">
+                        Instagram
+                    </span>
+                </a>
             </div>
         </div>
     );
