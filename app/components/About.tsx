@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-export default function About() {
+export default function About({ className }: { className?: string }) {
     return (
-        <div className="flex flex-col gap-8">
+        <div className={`flex flex-col gap-8 ${className || ""}`}>
             {/* Profile Section */}
             <div className="bg-white overflow-hidden border-4 border-black">
                 <div className="relative aspect-4/5 w-full overflow-hidden">
@@ -18,19 +18,17 @@ export default function About() {
                         Michael Ferreira
                     </h2>
                     <p className="magazine-body text-sm text-white/70 uppercase tracking-widest">
-                        Software Engineer
+                        Software Engineer, Developer, Student
                     </p>
                 </div>
             </div>
 
             {/* Bio */}
-            <div className="border-l-4 border-white pl-6">
-                <p className="magazine-body text-sm sm:text-base leading-relaxed text-white/80 italic">
-                    "I'm a Computer Science and Business double degree student
-                    at the University of Waterloo and Wilfrid Laurier
-                    University. I love tinkering and making cool things."
-                </p>
-            </div>
+            <p className="magazine-body leading-relaxed text-white/90">
+                I'm a Computer Science and Business double degree student at the
+                University of Waterloo and Wilfrid Laurier University. I love
+                tinkering and making cool things.
+            </p>
 
             {/* Education */}
             <div className="border border-white/20 p-6">
