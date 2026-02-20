@@ -2,6 +2,7 @@ export const experienceData = [
     {
         title: "AI Engineering Intern",
         company: "Cache",
+        companyUrl: "https://cacheinyourcloset.com",
         location: "Remote, Toronto, ON",
         dates: "Feb 2026 - Present",
         description: [
@@ -12,6 +13,7 @@ export const experienceData = [
     {
         title: "Software Engineering Intern",
         company: "Local Reach",
+        companyUrl: "https://thelocalreach.ca",
         location: "Kingston, ON",
         dates: "Nov 2024 - Mar 2025",
         description: [
