@@ -1,12 +1,10 @@
 import Nav from "./Nav";
 
-type NewspaperHeaderProps = {
+type HeaderProps = {
     activeSection: string;
 };
 
-export default function NewspaperHeader({
-    activeSection,
-}: NewspaperHeaderProps) {
+export default function Header({ activeSection }: HeaderProps) {
     const now = new Date();
     const dateString = now
         .toLocaleDateString("en-US", {
@@ -24,8 +22,8 @@ export default function NewspaperHeader({
     });
 
     return (
-        <header className="w-full bg-black border-b border-white/20 sticky top-0 z-50">
-            <div className="py-6 px-4 sm:py-8 sm:px-6 md:py-10 md:px-12">
+        <header className="w-full bg-black border-b border-white/20">
+            <div className="py-2 px-4 sm:py-4 sm:px-6 md:py-6 md:px-8">
                 <div className="flex items-center justify-between gap-2 mb-4">
                     <span className="magazine-body text-[9px] sm:text-[10px] tracking-widest text-white/50 uppercase">
                         Issue {new Date().getMonth() + 1}
@@ -34,7 +32,7 @@ export default function NewspaperHeader({
                         {dateString}
                     </span>
                 </div>
-                <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-center magazine-title my-2 sm:my-3 text-white">
+                <h1 className="text-6xl md:text-7xl lg:text-8xl text-center magazine-title my-2 sm:my-3 text-white">
                     Michael Ferreira
                 </h1>
                 <div className="flex items-center justify-center gap-2 mt-4">

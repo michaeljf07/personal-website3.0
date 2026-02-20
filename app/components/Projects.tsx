@@ -3,7 +3,7 @@ import { projects } from "./projectData";
 
 export default function Projects() {
     return (
-        <div className="p-6 sm:p-8 md:p-12 lg:p-16">
+        <div className="py-6 sm:py-8 md:py-10 lg:py-12 px-8 sm:px-10 md:px-12 lg:px-14">
             {/* Section Header */}
             <div className="mb-12 border-b-4 border-white pb-6">
                 <div className="flex items-baseline gap-4 mb-2">
@@ -11,13 +11,13 @@ export default function Projects() {
                         Portfolio
                     </span>
                 </div>
-                <h2 className="magazine-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white">
-                    projects.
+                <h2 className="magazine-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white">
+                    Projects
                 </h2>
             </div>
 
             {/* Projects Grid */}
-            <div className="space-y-16">
+            <div className="space-y-8">
                 {projects.map((project, index) => (
                     <article
                         key={project.title}
@@ -29,7 +29,7 @@ export default function Projects() {
                                     <span className="magazine-body text-sm font-bold bg-white text-black px-3 py-1 uppercase tracking-widest">
                                         {String(index + 1).padStart(2, "0")}
                                     </span>
-                                    <h3 className="magazine-heading text-2xl sm:text-3xl md:text-4xl text-white">
+                                    <h3 className="magazine-heading text-xl sm:text-2xl md:text-3xl text-white">
                                         {project.title}
                                     </h3>
                                 </div>
@@ -53,7 +53,7 @@ export default function Projects() {
                             {/* Description */}
                             <div className="p-6 sm:p-8 flex flex-col justify-between">
                                 <div className="space-y-6">
-                                    <p className="magazine-body text-sm sm:text-base leading-relaxed text-white/80">
+                                    <p className="magazine-body text-sm sm:text-base leading-relaxed text-white/90">
                                         {project.description}
                                     </p>
 

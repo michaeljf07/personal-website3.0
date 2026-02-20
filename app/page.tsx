@@ -2,7 +2,7 @@ import About from "./components/About";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import NewspaperHeader from "./components/NewspaperHeader";
+import Header from "./components/Header";
 
 type PageProps = {
     searchParams: Promise<{ section?: string }>;
@@ -14,8 +14,7 @@ export default async function Home({ searchParams }: PageProps) {
 
     return (
         <div className="flex flex-col min-h-screen bg-black">
-            {/* Magazine Header */}
-            <NewspaperHeader activeSection={activeSection} />
+            <Header activeSection={activeSection} />
 
             <div className="flex flex-1 min-h-0 flex-col md:flex-row max-w-[1800px] mx-auto w-full">
                 {/* Left: About (hidden on mobile, visible on desktop) */}
@@ -25,7 +24,7 @@ export default async function Home({ searchParams }: PageProps) {
 
                 {/* Right: Switchable sections */}
                 <main className="flex-1 min-h-0 overflow-auto">
-                    {activeSection === "about" && <About />}
+                    {activeSection === "about" && <About className="p-4" />}
                     {activeSection === "experience" && <Experience />}
                     {activeSection === "projects" && <Projects />}
                     {activeSection === "contact" && <Contact />}

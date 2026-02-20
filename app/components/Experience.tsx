@@ -1,8 +1,10 @@
 import { experienceData } from "./experienceData";
+import Link from "next/link";
 
 type Experience = {
     title: string;
     company: string;
+    companyUrl?: string;
     location: string;
     dates: string;
     description: string[];
@@ -10,7 +12,7 @@ type Experience = {
 
 export default function Experience() {
     return (
-        <div className="p-6 sm:p-8 md:p-12 lg:p-16">
+        <div className="py-6 sm:py-8 md:py-10 lg:py-12 px-8 sm:px-10 md:px-12 lg:px-14">
             {/* Section Header */}
             <div className="mb-12 border-b-4 border-white pb-6">
                 <div className="flex items-baseline gap-4 mb-2">
@@ -18,7 +20,7 @@ export default function Experience() {
                         Career
                     </span>
                 </div>
-                <h2 className="magazine-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white">
+                <h2 className="magazine-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white">
                     Experience
                 </h2>
             </div>
@@ -44,9 +46,17 @@ export default function Experience() {
                                     </h3>
                                     <div className="magazine-body text-sm sm:text-base text-white/60 mb-6 space-y-1">
                                         <div className="flex flex-wrap items-center gap-3">
-                                            <span className="font-semibold text-white uppercase tracking-wider">
-                                                {experience.company}
-                                            </span>
+                                            {experience.companyUrl ? (
+                                                <Link
+                                                    href={experience.companyUrl}
+                                                    className="font-semibold text-white uppercase tracking-wider hover:underline cursor-pointer">
+                                                    {experience.company}
+                                                </Link>
+                                            ) : (
+                                                <span className="font-semibold text-white uppercase tracking-wider">
+                                                    {experience.company}
+                                                </span>
+                                            )}
                                             <span className="text-white/30">
                                                 |
                                             </span>
