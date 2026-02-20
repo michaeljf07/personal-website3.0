@@ -1,6 +1,6 @@
 export default function Contact() {
     return (
-        <div className="p-6 sm:p-8 md:p-12 lg:p-16">
+        <div className="py-6 sm:py-8 md:py-10 lg:py-12 px-8 sm:px-10 md:px-12 lg:px-14">
             {/* Section Header */}
             <div className="mb-12 border-b-4 border-white pb-6">
                 <div className="flex items-baseline gap-4 mb-2">
@@ -8,18 +8,18 @@ export default function Contact() {
                         Connect
                     </span>
                 </div>
-                <h2 className="magazine-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white">
-                    contact.
+                <h2 className="magazine-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white">
+                    Contact
                 </h2>
             </div>
 
             {/* Contact Content */}
             <div className="space-y-8">
                 <div className="border border-white/20 p-8 sm:p-10 md:p-12">
-                    <p className="magazine-body text-base sm:text-lg md:text-xl leading-relaxed mb-12 text-white/80 italic border-l-4 border-white pl-6">
-                        "Interested in collaborating or just want to say hello?
+                    <p className="magazine-body sm:text-lg md:text-xl leading-relaxed mb-12 text-white">
+                        Interested in collaborating or just want to say hello?
                         I'm always open to discussing new projects, creative
-                        ideas, or opportunities to be part of your vision."
+                        ideas, or opportunities to be part of your vision.
                     </p>
 
                     <div className="space-y-8">

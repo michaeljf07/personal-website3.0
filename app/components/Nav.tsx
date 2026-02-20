@@ -37,7 +37,7 @@ export default function Nav({ activeSection }: NavProps) {
     }, []);
 
     return (
-        <nav className="flex flex-wrap items-center justify-center gap-0 py-4 px-4 sm:px-6 md:px-10 bg-black border-t border-white/10">
+        <nav className="flex flex-wrap items-center justify-center gap-0 py-2 px-4 sm:px-6 md:px-10 bg-black border-t border-white/10">
             {isMobile
                 ? MOBILE_SECTIONS.map(({ id, label }) => {
                       const isActive = activeSection === id;
