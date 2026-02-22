@@ -1,12 +1,14 @@
+"use client";
+
 import Nav from "./Nav";
+import ClientTime from "./ClientTime";
 
 type HeaderProps = {
     activeSection: string;
 };
 
 export default function Header({ activeSection }: HeaderProps) {
-    const now = new Date();
-    const dateString = now
+    const dateString = new Date()
         .toLocaleDateString("en-US", {
             weekday: "long",
             year: "numeric",
@@ -14,12 +16,6 @@ export default function Header({ activeSection }: HeaderProps) {
             day: "numeric",
         })
         .toUpperCase();
-
-    const timeString = now.toLocaleTimeString("en-US", {
-        hour: "numeric",
-        minute: "2-digit",
-        hour12: true,
-    });
 
     return (
         <header className="w-full bg-black border-b border-white/20">
@@ -36,9 +32,7 @@ export default function Header({ activeSection }: HeaderProps) {
                     Michael Ferreira
                 </h1>
                 <div className="flex items-center justify-center gap-2 mt-4">
-                    <span className="magazine-body text-[10px] sm:text-xs tracking-widest text-white/70 italic">
-                        {timeString}
-                    </span>
+                    <ClientTime />
                 </div>
             </div>
 
