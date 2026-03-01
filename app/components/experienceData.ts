@@ -6,8 +6,9 @@ export const experienceData = [
         location: "Remote, Toronto, ON",
         dates: "Feb 2026 - Present",
         description: [
-            "Simultaneously developed a full-stack web applicaiton and IOS app, contributing 10,000+ lines of production code.",
-            "Working to develop AI models to assist in the recognition of clothing items in images, streamlining inventory management and the user experience.",
+            "Led end-to-end deployment of Stripe payment processing, authentication, and user management across a React web app and iOS Swift app, supporting 100+ users and 1,500+ transactions",
+            "Designed and optimized a PostgreSQL database on Supabase powering 50+ API endpoints, achieving sub-100ms response times through caching, denormalization, and memoization",
+            "Delivered 10,000+ lines of production code across the full stack and mobile app, driving $5,000+ in revenue and enabling 5x user growth through feature development and performance improvements",
         ],
     },
     {
