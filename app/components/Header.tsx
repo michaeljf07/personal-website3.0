@@ -3,11 +3,7 @@
 import Nav from "./Nav";
 import ClientTime from "./ClientTime";
 
-type HeaderProps = {
-    activeSection: string;
-};
-
-export default function Header({ activeSection }: HeaderProps) {
+export default function Header() {
     const dateString = new Date()
         .toLocaleDateString("en-US", {
             weekday: "long",
@@ -36,7 +32,7 @@ export default function Header({ activeSection }: HeaderProps) {
                 </div>
             </div>
 
-            <Nav activeSection={activeSection} />
+            <Nav />
         </header>
     );
 }

@@ -1,7 +1,7 @@
 export default function Contact() {
     return (
         <section id="contact">
-            <h2 className="text-xs font-medium uppercase tracking-widest text-gray-500 mb-10">
+            <h2 className="text-xs font-medium uppercase tracking-widest text-gray-300 mb-10">
                 Contact
             </h2>
             <p className="text-md text-gray-300 mb-8 leading-relaxed max-w-sm">
@@ -36,7 +36,7 @@ export default function Contact() {
                     Instagram ↗
                 </a>
             </div>
-            <p className="text-[11px] text-[#333] mt-20">
+            <p className="text-xs text-gray-500 mt-20">
                 © {new Date().getFullYear()} Michael Ferreira
             </p>
         </section>

@@ -14,8 +14,14 @@ export default function Blog() {
             <h2 className="text-xs font-medium uppercase tracking-widest text-gray-300 mb-10">
                 Writing
             </h2>
-            <div className="space-y-6">
-                Coming Soon...
+            <div className="flex gap-1 space-y-6">
+                Coming Soon
+                <div className="flex space-x-1 mt-3 justify-center items-center">
+                    <span className="sr-only">Loading...</span>
+                    <div className="h-1 w-1 bg-gray-300 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+                    <div className="h-1 w-1 bg-gray-300 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+                    <div className="h-1 w-1 bg-gray-300 rounded-full animate-bounce"></div>
+                </div>
                 {/* {blogPosts.map((post) => (
                     <div key={post.slug}>
                         <div className="flex items-baseline justify-between gap-4 mb-1">
