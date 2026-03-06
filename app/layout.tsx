@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
     weight: ["400", "500", "600", "700"],
     subsets: ["latin"],
     variable: "--font-inter",
-});
-
-const playfair = Playfair_Display({
-    weight: ["400", "600", "700", "900"],
-    subsets: ["latin"],
-    variable: "--font-playfair",
 });
 
 const siteUrl =
@@ -27,7 +21,7 @@ export const metadata: Metadata = {
         template: "%s | Michael Ferreira",
     },
     description:
-        "Michael Ferreira - Software Engineer and Developer. Computer Science and Business double degreestudent at University of Waterloo and Wilfrid Laurier University. Portfolio showcasing projects in web development, machine learning, and full-stack applications.",
+        "Michael Ferreira - Software Engineer and Developer. Computer Science and Business double degree student at University of Waterloo and Wilfrid Laurier University. Portfolio showcasing projects in web development, machine learning, and full-stack applications.",
     keywords: [
         "Michael Ferreira",
         "Michael J Ferreira",
@@ -125,8 +119,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body
-                className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+            <body className={`${inter.variable} font-sans`}>
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
