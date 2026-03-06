@@ -21,7 +21,7 @@ export default function Experience() {
                                     href={exp.companyUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-sm text-[#666] hover:text-white transition-colors">
+                                    className="text-sm text-gray-500 hover:text-white transition-colors">
                                     {exp.company} ↗
                                 </a>
                             ) : (
@@ -32,7 +32,7 @@ export default function Experience() {
                             <span className="text-gray-500 hidden sm:block">
                                 ·
                             </span>
-                            <span className="text-xs text-gray-500">
+                            <span className="text-sm text-gray-500">
                                 {exp.dates}
                             </span>
                         </div>

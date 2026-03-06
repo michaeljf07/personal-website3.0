@@ -9,17 +9,21 @@ export default function Home() {
     return (
         <>
             <Nav />
-            <main className="max-w-2xl mx-auto px-6 pt-28 pb-32">
+            <main className="max-w-2xl mx-auto px-6 pt-28 py-16">
                 <About />
-                <div className="my-20 border-t border-white/6" />
+                <Divider />
                 <Experience />
-                <div className="my-20 border-t border-white/6" />
+                <Divider />
                 <Projects />
-                <div className="my-20 border-t border-white/6" />
+                <Divider />
                 <Blog />
-                <div className="my-20 border-t border-white/6" />
+                <Divider />
                 <Contact />
             </main>
         </>
     );
+}
+
+function Divider() {
+    return <div className="my-20 border-t border-white/6" />;
 }
