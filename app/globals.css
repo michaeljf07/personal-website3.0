@@ -1,36 +1,36 @@
 @import "tailwindcss";
 
 :root {
-    --background: #000000;
+    --background: #080808;
     --foreground: #ffffff;
-    --accent: #ffffff;
-    --accent-dark: #1a1a1a;
 }
 
 html {
     overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 body {
     background: var(--background);
     color: var(--foreground);
     overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 100%;
+    font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-overflow-scrolling: touch;
 }
 
-.magazine-title {
-    font-family: var(--font-inter), sans-serif;
-    font-weight: 900;
-    letter-spacing: -0.04em;
+/* Enable momentum scrolling on iOS for scroll containers */
+.overflow-y-auto {
+    -webkit-overflow-scrolling: touch;
 }
 
-.magazine-body {
-    font-family: var(--font-inter), sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.01em;
-}
-
-.magazine-heading {
-    font-family: var(--font-inter), sans-serif;
-    font-weight: 800;
-    letter-spacing: -0.02em;
+@media (min-width: 1024px) {
+    html,
+    body {
+        overflow: hidden;
+    }
 }

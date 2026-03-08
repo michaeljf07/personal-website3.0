@@ -1,34 +1,61 @@
-import About from "./components/About";
-import Experience from "./components/Experience";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Header from "./components/Header";
+import { GitHubIcon, LinkedInIcon, InstagramIcon } from "./components/icons";
+import AboutPanel from "./components/AboutPanel";
+import ExperiencePanel from "./components/ExperiencePanel";
+import ProjectsPanel from "./components/ProjectsPanel";
 
-type PageProps = {
-    searchParams: Promise<{ section?: string }>;
-};
-
-export default async function Home({ searchParams }: PageProps) {
-    const params = await searchParams;
-    const activeSection = params.section || "projects";
-
+export default function Home() {
     return (
-        <div className="flex flex-col min-h-screen bg-black">
-            <Header activeSection={activeSection} />
+        <div className="h-dvh min-h-screen lg:h-screen overflow-y-auto lg:overflow-hidden touch-pan-y bg-[#080808] text-white flex flex-col pb-[env(safe-area-inset-bottom)]">
+            <div
+                className="fixed inset-0 pointer-events-none"
+                style={{
+                    backgroundImage:
+                        "linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px)",
+                    backgroundSize: "44px 44px",
+                }}
+            />
 
-            <div className="flex flex-1 min-h-0 flex-col md:flex-row max-w-[1800px] mx-auto w-full">
-                {/* Left: About (hidden on mobile, visible on desktop) */}
-                <aside className="hidden md:flex md:w-1/3 md:max-w-[450px] lg:max-w-[500px] md:shrink-0 flex-col py-8 px-8 overflow-auto border-r border-white/10">
-                    <About />
-                </aside>
+            <header className="relative z-10 flex items-center justify-between px-4 sm:px-6 pt-[env(safe-area-inset-top)] h-14 shrink-0 border-b border-white/[0.07]">
+                <div className="flex items-baseline gap-3">
+                    <span className="text-md font-bold tracking-tight text-white">
+                        Michael Ferreira
+                    </span>
+                    <span className="text-sm tracking-[0.14em] uppercase text-white/50 hidden sm:inline">
+                        Software Engineer
+                    </span>
+                </div>
+                <div className="flex items-center gap-1 sm:gap-5">
+                    <a
+                        href="https://github.com/michaeljf07"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 -m-2 text-white/50 hover:text-white/90 transition-colors touch-manipulation"
+                        aria-label="GitHub">
+                        <GitHubIcon className="w-5 h-5" />
+                    </a>
+                    <a
+                        href="https://linkedin.com/in/michael-j-ferreira"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 -m-2 text-white/50 hover:text-white/90 transition-colors touch-manipulation"
+                        aria-label="LinkedIn">
+                        <LinkedInIcon className="w-5 h-5" />
+                    </a>
+                    <a
+                        href="https://instagram.com/michael.ferreira07"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 -m-2 text-white/50 hover:text-white/90 transition-colors touch-manipulation"
+                        aria-label="Instagram">
+                        <InstagramIcon className="w-5 h-5" />
+                    </a>
+                </div>
+            </header>
 
-                {/* Right: Switchable sections */}
-                <main className="flex-1 min-h-0 overflow-auto">
-                    {activeSection === "about" && <About className="p-4" />}
-                    {activeSection === "experience" && <Experience />}
-                    {activeSection === "projects" && <Projects />}
-                    {activeSection === "contact" && <Contact />}
-                </main>
+            <div className="relative z-10 flex-none lg:flex-1 min-h-0 overflow-visible lg:overflow-hidden grid grid-cols-1 lg:grid-cols-[260px_1fr_1fr] lg:min-h-0 divide-y lg:divide-y-0 lg:divide-x divide-white/6">
+                <AboutPanel />
+                <ExperiencePanel />
+                <ProjectsPanel />
             </div>
         </div>
     );
