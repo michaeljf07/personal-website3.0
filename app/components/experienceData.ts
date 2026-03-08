@@ -5,7 +5,7 @@ export const experienceData = [
         companyUrl: "https://cacheinyourcloset.com",
         location: "Remote, Toronto, ON",
         dates: "Feb 2026 - Present",
-        summary: "Payments, auth & full-stack across web and iOS",
+        summary: "Payments, authentication, and full-stack across web and iOS",
         technologies: ["React", "Swift", "Stripe", "PostgreSQL", "Supabase"],
         description: [
             "Led end-to-end deployment of Stripe payment processing, authentication, and user management across a React web app and iOS Swift app, supporting 100+ users and 1,500+ transactions",
@@ -19,7 +19,8 @@ export const experienceData = [
         companyUrl: "https://thelocalreach.ca",
         location: "Kingston, ON",
         dates: "Nov 2024 - Mar 2025",
-        summary: "Web performance, computer vision & ML pipelines",
+        summary:
+            "Full-stack, web performance, computer vision, and ML pipelines",
         technologies: ["Next.js", "YOLO", "OpenCV", "Python", "TensorFlow"],
         description: [
             "Refactored the website to leverage SSR and SSG techniques, reducing client-side bundle size by 68% and improving initial page load time from 2.8s to 0.9s.",
@@ -32,7 +33,7 @@ export const experienceData = [
         company: "Baobab",
         location: "Toronto, ON",
         dates: "Dec 2024 - Aug 2025",
-        summary: "Full-stack donation platform for 10 charities",
+        summary: "Full-stack donation platform for charities in my communities",
         technologies: ["MERN", "JWT", "MongoDB", "React"],
         description: [
             "Built and deployed a full-stack MERN donation platform serving 10 charitable organizations with 90+ active users, contributing 9K+ lines of production code that facilitated $1,000+ in donations",
