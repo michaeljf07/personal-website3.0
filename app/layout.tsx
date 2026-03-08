@@ -1,17 +1,15 @@
-import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-    weight: ["400", "500", "600", "700"],
+const geist = Geist({
     subsets: ["latin"],
-    variable: "--font-inter",
+    variable: "--font-geist",
 });
 
-const playfair = Playfair_Display({
-    weight: ["400", "600", "700", "900"],
+const geistMono = Geist_Mono({
     subsets: ["latin"],
-    variable: "--font-playfair",
+    variable: "--font-geist-mono",
 });
 
 const siteUrl =
@@ -85,6 +83,13 @@ export const metadata: Metadata = {
     category: "technology",
 };
 
+export const viewport: Viewport = {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+    viewportFit: "cover",
+};
+
 const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -126,7 +131,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+                className={`${geist.variable} ${geistMono.variable} antialiased`}>
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
