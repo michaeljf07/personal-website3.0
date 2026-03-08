@@ -1,14 +1,37 @@
 @import "tailwindcss";
 
+:root {
+    --background: #080808;
+    --foreground: #ffffff;
+}
+
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 body {
     background-color: #0f0f0f;
     color: #d4d4d4;
-    font-family: var(--font-inter), system-ui, sans-serif;
     overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 100%;
+    font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Enable momentum scrolling on iOS for scroll containers */
+.overflow-y-auto {
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 1024px) {
+    html,
+    body {
+        overflow: hidden;
+    }
 }

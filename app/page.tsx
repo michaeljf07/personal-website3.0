@@ -1,29 +1,62 @@
-import Nav from "./components/Nav";
-import About from "./components/About";
-import Experience from "./components/Experience";
-import Projects from "./components/Projects";
-import Blog from "./components/Blog";
-import Contact from "./components/Contact";
+import { GitHubIcon, LinkedInIcon, InstagramIcon } from "./components/icons";
+import AboutPanel from "./components/AboutPanel";
+import ExperiencePanel from "./components/ExperiencePanel";
+import ProjectsPanel from "./components/ProjectsPanel";
 
 export default function Home() {
     return (
-        <>
-            <Nav />
-            <main className="max-w-2xl mx-auto px-6 pt-28 py-16">
-                <About />
-                <Divider />
-                <Experience />
-                <Divider />
-                <Projects />
-                <Divider />
-                <Blog />
-                <Divider />
-                <Contact />
-            </main>
-        </>
-    );
-}
+        <div className="h-dvh min-h-screen lg:h-screen overflow-y-auto lg:overflow-hidden touch-pan-y bg-[#080808] text-white flex flex-col pb-[env(safe-area-inset-bottom)]">
+            <div
+                className="fixed inset-0 pointer-events-none"
+                style={{
+                    backgroundImage:
+                        "linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px)",
+                    backgroundSize: "44px 44px",
+                }}
+            />
 
-function Divider() {
-    return <div className="my-20 border-t border-white/6" />;
+            <header className="relative z-10 flex items-center justify-between px-4 sm:px-6 pt-[env(safe-area-inset-top)] h-14 shrink-0 border-b border-white/[0.07]">
+                <div className="flex items-baseline gap-3">
+                    <span className="text-md font-bold tracking-tight text-white">
+                        Michael Ferreira
+                    </span>
+                    <span className="text-sm tracking-[0.14em] uppercase text-white/50 hidden sm:inline">
+                        Software Engineer
+                    </span>
+                </div>
+                <div className="flex items-center gap-1 sm:gap-5">
+                    <a
+                        href="https://github.com/michaeljf07"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 -m-2 text-white/50 hover:text-white/90 transition-colors touch-manipulation"
+                        aria-label="GitHub">
+                        <GitHubIcon className="w-5 h-5" />
+                    </a>
+                    <a
+                        href="https://linkedin.com/in/michael-j-ferreira"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 -m-2 text-white/50 hover:text-white/90 transition-colors touch-manipulation"
+                        aria-label="LinkedIn">
+                        <LinkedInIcon className="w-5 h-5" />
+                    </a>
+                    <a
+                        href="https://instagram.com/michael.ferreira07"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 -m-2 text-white/50 hover:text-white/90 transition-colors touch-manipulation"
+                        aria-label="Instagram">
+                        <InstagramIcon className="w-5 h-5" />
+                    </a>
+                </div>
+            </header>
+
+            <div className="relative z-10 flex-none lg:flex-1 min-h-0 overflow-visible lg:overflow-hidden grid grid-cols-1 lg:grid-cols-[260px_1fr_1fr] lg:min-h-0 divide-y lg:divide-y-0 lg:divide-x divide-white/6">
+                <AboutPanel />
+                <ExperiencePanel />
+                <ProjectsPanel />
+            </div>
+        </div>
+    );
 }
