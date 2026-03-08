@@ -4,7 +4,7 @@ import { ExternalLinkIcon } from "./icons";
 export default function ExperiencePanel() {
     return (
         <section className="flex flex-col p-4 sm:p-5 h-4/5">
-            <div className="text-xs uppercase tracking-[0.15em] text-white/50 mb-3">
+            <div className="text-xs uppercase tracking-[0.15em] text-white/65 mb-3">
                 Experience
             </div>
             <div className="flex flex-col gap-2.5 lg:flex-1 lg:min-h-0">
@@ -41,7 +41,7 @@ export default function ExperiencePanel() {
                                     {exp.location.split(",")[0]}
                                 </span>
                             </div>
-                            <p className="text-sm text-white/55 mt-1.5 leading-relaxed">
+                            <p className="text-sm text-gray-300 mt-1.5 leading-relaxed">
                                 {exp.summary}
                             </p>
                         </div>

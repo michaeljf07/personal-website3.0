@@ -51,7 +51,7 @@ export default function AboutPanel() {
                     <div className="text-md font-bold leading-tight text-white">
                         Michael Ferreira
                     </div>
-                    <div className="text-xs text-white/55 mt-0.5 leading-relaxed">
+                    <div className="text-xs text-gray-400 mt-0.5 leading-relaxed">
                         CS + Business
                         <br />
                         UWaterloo &amp; WLU
@@ -60,7 +60,7 @@ export default function AboutPanel() {
             </div>
 
             {/* Bio */}
-            <p className="text-sm text-white/65 leading-relaxed">
+            <p className="text-sm text-gray-300 leading-relaxed">
                 Double degree student passionate about building at the
                 intersection of technology and business. I love tinkering and
                 making cool things.
@@ -68,7 +68,7 @@ export default function AboutPanel() {
 
             {/* Education */}
             <div>
-                <div className="text-xs uppercase tracking-[0.15em] text-white/50 mb-2">
+                <div className="text-xs uppercase tracking-[0.15em] text-white/65 mb-2">
                     Education
                 </div>
                 <div className="space-y-1.5">
@@ -102,7 +102,7 @@ export default function AboutPanel() {
 
             {/* Connect */}
             <div className="border-t border-white/6 pt-4">
-                <div className="text-[11px] uppercase tracking-[0.15em] text-white/50 mb-2.5">
+                <div className="text-xs uppercase tracking-[0.15em] text-white/65 mb-2.5">
                     Connect
                 </div>
                 <div className="flex flex-col gap-1.5">
@@ -112,7 +112,7 @@ export default function AboutPanel() {
                             href={href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-[12px] text-white/55 hover:text-white/90 transition-colors">
+                            className="flex items-center gap-2 text-sm text-gray-400 hover:text-white/90 transition-colors">
                             <Icon className="w-3 h-3 shrink-0" />
                             <span>{label}</span>
                         </a>

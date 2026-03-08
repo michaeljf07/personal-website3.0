@@ -4,7 +4,7 @@ import { GitHubIcon, ExternalLinkIcon } from "./icons";
 export default function ProjectsPanel() {
     return (
         <section className="flex flex-col p-4 sm:p-5 lg:min-h-0">
-            <div className="text-[11px] uppercase tracking-[0.15em] text-white/50 mb-3">
+            <div className="text-xs uppercase tracking-[0.15em] text-white/65 mb-3">
                 Projects
             </div>
             <div className="flex flex-col gap-2 lg:flex-1 lg:min-h-0">
@@ -47,7 +47,7 @@ export default function ProjectsPanel() {
                                         </div>
                                         <div className="w-5 shrink-0" />
                                     </div>
-                                    <p className="text-xs text-white/60 mt-1 leading-relaxed line-clamp-2">
+                                    <p className="text-xs text-gray-300 mt-1 leading-relaxed line-clamp-2">
                                         {project.description}
                                     </p>
                                 </div>

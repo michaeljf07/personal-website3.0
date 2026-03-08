@@ -16,11 +16,11 @@ export default function Home() {
             />
 
             <header className="relative z-10 flex items-center justify-between px-4 sm:px-6 pt-[env(safe-area-inset-top)] h-14 shrink-0 border-b border-white/[0.07]">
-                <div className="flex items-baseline gap-3">
+                <div className="flex items-baseline gap-4">
                     <span className="text-md font-bold tracking-tight text-white">
                         Michael Ferreira
                     </span>
-                    <span className="text-sm tracking-[0.14em] uppercase text-white/50 hidden sm:inline">
+                    <span className="text-sm tracking-[0.14em] uppercase text-gray-400 hidden sm:inline">
                         Software Engineer
                     </span>
                 </div>
