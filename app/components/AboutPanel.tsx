@@ -1,5 +1,9 @@
 import Image from "next/image";
-import { GitHubIcon, LinkedInIcon, InstagramIcon } from "./icons";
+import {
+    GitHubIcon,
+    LinkedInIcon,
+    InstagramIcon,
+} from "./icons";
 
 const socialLinks = [
     {
@@ -97,7 +101,6 @@ export default function AboutPanel() {
                     ))}
                 </div>
             </div>
-
             <div className="hidden lg:block lg:flex-1" />
 
             {/* Connect */}

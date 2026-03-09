@@ -18,7 +18,7 @@ export default function ExperiencePanel() {
                                     {exp.title}
                                 </div>
                                 <div className="text-xs text-white/50 tracking-widest uppercase shrink-0 mt-0.5">
-                                    {exp.dates.split(" - ")[0]}
+                                    {exp.dates}
                                 </div>
                             </div>
                             <div className="flex items-center gap-1.5 mt-0.5">
