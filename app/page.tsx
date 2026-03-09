@@ -1,4 +1,9 @@
-import { GitHubIcon, LinkedInIcon, InstagramIcon } from "./components/icons";
+import {
+    GitHubIcon,
+    LinkedInIcon,
+    InstagramIcon,
+    ExternalLinkIcon,
+} from "./components/icons";
 import AboutPanel from "./components/AboutPanel";
 import ExperiencePanel from "./components/ExperiencePanel";
 import ProjectsPanel from "./components/ProjectsPanel";
@@ -24,7 +29,16 @@ export default function Home() {
                         Software Engineer
                     </span>
                 </div>
-                <div className="flex items-center gap-1 sm:gap-5">
+                <div className="flex items-center gap-3 sm:gap-5">
+                    <a
+                        href="/resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 -m-2 text-white/50 hover:text-white/90 transition-colors touch-manipulation flex items-center gap-1.5 text-sm"
+                        aria-label="Resume">
+                        <span className="hidden sm:inline">Resume</span>
+                        <ExternalLinkIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </a>
                     <a
                         href="https://github.com/michaeljf07"
                         target="_blank"
