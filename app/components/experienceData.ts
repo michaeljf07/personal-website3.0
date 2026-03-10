@@ -3,6 +3,7 @@ export const experienceData = [
         title: "AI Engineering Intern",
         company: "Cache",
         companyUrl: "https://cacheinyourcloset.com",
+        companyLogo: "/company_logos/cache.jpg",
         location: "Remote, Toronto, ON",
         dates: "Feb 2026 - Present",
         summary: "Payments, authentication, and full-stack across web and iOS",
@@ -17,6 +18,7 @@ export const experienceData = [
         title: "Software Engineering Intern",
         company: "Local Reach",
         companyUrl: "https://thelocalreach.ca",
+        companyLogo: "/company_logos/localreach.jpg",
         location: "Kingston, ON",
         dates: "Nov 2024 - Mar 2025",
         summary:
@@ -31,6 +33,7 @@ export const experienceData = [
     {
         title: "Charity CEO and Lead Developer",
         company: "Baobab",
+        companyLogo: "/company_logos/baobab.jpg",
         location: "Toronto, ON",
         dates: "Dec 2024 - Aug 2025",
         summary: "Full-stack donation platform for charities in my communities",

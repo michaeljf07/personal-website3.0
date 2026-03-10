@@ -7,6 +7,7 @@ import {
 import AboutPanel from "./components/AboutPanel";
 import ExperiencePanel from "./components/ExperiencePanel";
 import ProjectsPanel from "./components/ProjectsPanel";
+import BlogPanel from "./components/BlogPanel";
 
 export default function Home() {
     return (
@@ -22,22 +23,22 @@ export default function Home() {
 
             <header className="relative z-10 flex items-center justify-between px-4 sm:px-6 pt-[env(safe-area-inset-top)] h-14 shrink-0 border-b border-white/[0.07]">
                 <div className="flex items-baseline gap-4">
-                    <span className="text-md font-bold tracking-tight text-white">
+                    <span className="text-lg font-bold tracking-tight text-white hidden sm:inline">
                         Michael Ferreira
                     </span>
-                    <span className="text-sm tracking-[0.14em] uppercase text-gray-400 hidden sm:inline">
+                    <span className="text-sm tracking-[0.16em] uppercase text-gray-400">
                         Software Engineer
                     </span>
                 </div>
-                <div className="flex items-center gap-3 sm:gap-5">
+                <div className="flex items-center gap-4">
                     <a
                         href="/resume.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-2 -m-2 text-white/50 hover:text-white/90 transition-colors touch-manipulation flex items-center gap-1.5 text-sm"
                         aria-label="Resume">
-                        <span className="hidden sm:inline">Resume</span>
-                        <ExternalLinkIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+                        <span>Resume</span>
+                        <ExternalLinkIcon className="w-4 h-4" />
                     </a>
                     <a
                         href="https://github.com/michaeljf07"
@@ -68,7 +69,10 @@ export default function Home() {
 
             <div className="relative z-10 flex-none lg:flex-1 min-h-0 overflow-visible lg:overflow-hidden grid grid-cols-1 lg:grid-cols-[260px_1fr_1fr] lg:min-h-0 divide-y lg:divide-y-0 lg:divide-x divide-white/6">
                 <AboutPanel />
-                <ExperiencePanel />
+                <div>
+                    <ExperiencePanel />
+                    <BlogPanel />
+                </div>
                 <ProjectsPanel />
             </div>
         </div>
