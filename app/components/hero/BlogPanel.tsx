@@ -1,4 +1,4 @@
-import { RightArrowIcon } from "./icons";
+import { RightArrowIcon } from "../icons";
 import Link from "next/link";
 
 export default function BlogPanel() {

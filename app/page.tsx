@@ -4,10 +4,10 @@ import {
     InstagramIcon,
     ExternalLinkIcon,
 } from "./components/icons";
-import AboutPanel from "./components/AboutPanel";
-import ExperiencePanel from "./components/ExperiencePanel";
-import ProjectsPanel from "./components/ProjectsPanel";
-import BlogPanel from "./components/BlogPanel";
+import AboutPanel from "./components/hero/AboutPanel";
+import ExperiencePanel from "./components/hero/ExperiencePanel";
+import ProjectsPanel from "./components/hero/ProjectsPanel";
+import BlogPanel from "./components/hero/BlogPanel";
 
 export default function Home() {
     return (

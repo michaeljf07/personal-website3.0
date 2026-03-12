@@ -1,5 +1,5 @@
 import { projects } from "./projectData";
-import { GitHubIcon, ExternalLinkIcon } from "./icons";
+import { GitHubIcon, ExternalLinkIcon } from "../icons";
 
 export default function ProjectsPanel() {
     return (

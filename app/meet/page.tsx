@@ -1,11 +1,12 @@
+import Calendar from "../components/meet/Calendar";
+
 export default function MeetingsPage() {
     return (
-        <div>
-            <h1>Meetings Page</h1>
-            <p>
-                Welcome to the meetings page. Here you can find all your
-                scheduled meetings and manage them.
-            </p>
+        <div className="h-screen gap-4">
+            <h1 className="text-3xl font-bold text-center my-12">
+                Book a Meeting With Me
+            </h1>
+            <Calendar />
         </div>
     );
 }

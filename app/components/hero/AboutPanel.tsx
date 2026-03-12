@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { GitHubIcon, LinkedInIcon, InstagramIcon } from "./icons";
+import { GitHubIcon, LinkedInIcon, InstagramIcon } from "../icons";
 
 const socialLinks = [
     {

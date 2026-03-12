@@ -1,5 +1,5 @@
 import { experienceData } from "./experienceData";
-import { ExternalLinkIcon } from "./icons";
+import { ExternalLinkIcon } from "../icons";
 import Image from "next/image";
 
 export default function ExperiencePanel() {
