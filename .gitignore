@@ -20,7 +20,7 @@
 # production
 /build
 
-/data
+/secrets
 
 # misc
 .DS_Store
