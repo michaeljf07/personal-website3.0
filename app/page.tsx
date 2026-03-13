@@ -1,25 +1,14 @@
-import {
-    GitHubIcon,
-    LinkedInIcon,
-    InstagramIcon,
-    ExternalLinkIcon,
-} from "./components/icons";
+import { GitHubIcon, LinkedInIcon, InstagramIcon, ExternalLinkIcon } from "./components/icons";
 import AboutPanel from "./components/hero/AboutPanel";
 import ExperiencePanel from "./components/hero/ExperiencePanel";
 import ProjectsPanel from "./components/hero/ProjectsPanel";
 import BlogPanel from "./components/hero/BlogPanel";
+import BackgroundImage from "./components/BackgroundImage";
 
 export default function Home() {
     return (
         <div className="h-dvh min-h-screen lg:h-screen overflow-y-auto lg:overflow-hidden touch-pan-y bg-[#080808] text-white flex flex-col pb-[env(safe-area-inset-bottom)]">
-            <div
-                className="fixed inset-0 pointer-events-none"
-                style={{
-                    backgroundImage:
-                        "linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px)",
-                    backgroundSize: "44px 44px",
-                }}
-            />
+            <BackgroundImage />
 
             <header className="relative z-10 flex items-center justify-between px-4 sm:px-6 pt-[env(safe-area-inset-top)] h-14 shrink-0 border-b border-white/[0.07]">
                 <div className="flex items-baseline gap-4">
