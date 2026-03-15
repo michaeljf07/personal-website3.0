@@ -4,13 +4,10 @@ import { GitHubIcon, ExternalLinkIcon } from "../icons";
 export default function ProjectsPanel() {
     return (
         <section className="flex flex-col p-4 sm:p-5 lg:min-h-0">
-            <div className="text-xs uppercase tracking-[0.15em] text-white/65 mb-3">
-                Projects
-            </div>
+            <div className="text-xs uppercase tracking-[0.15em] text-white/65 mb-3">Projects</div>
             <div className="flex flex-col gap-2 lg:flex-1 lg:min-h-0">
                 {projects.map((project, i) => {
-                    const demoUrl =
-                        "demoUrl" in project ? project.demoUrl : null;
+                    const demoUrl = "demoUrl" in project ? project.demoUrl : null;
                     const cardClassName =
                         "relative rounded-xl border border-white/[0.07] bg-white/[0.025] hover:bg-white/[0.05] hover:border-white/[0.14] transition-all duration-300 flex flex-col justify-between group lg:flex-1 lg:min-h-0";
                     return (
@@ -52,15 +49,13 @@ export default function ProjectsPanel() {
                                     </p>
                                 </div>
                                 <div className="flex gap-1.5 flex-wrap mt-1.5">
-                                    {project.technologies
-                                        .slice(0, 4)
-                                        .map((tech) => (
-                                            <span
-                                                key={tech}
-                                                className="text-[10px] px-1.5 py-0.5 border border-white/8 text-white/50 rounded-sm tracking-wide">
-                                                {tech}
-                                            </span>
-                                        ))}
+                                    {project.technologies.slice(0, 4).map((tech) => (
+                                        <span
+                                            key={tech}
+                                            className="text-[10px] px-1.5 py-0.5 border border-white/8 text-white/50 rounded-sm tracking-wide">
+                                            {tech}
+                                        </span>
+                                    ))}
                                 </div>
                             </div>
                         </div>
