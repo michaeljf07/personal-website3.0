@@ -20,6 +20,11 @@
 # production
 /build
 
+/secrets
+
+# Google Cloud / service account credentials
+**/*meeting-booker*.json
+
 # misc
 .DS_Store
 *.pem
