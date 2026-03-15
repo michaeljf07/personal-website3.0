@@ -173,7 +173,7 @@ export default function Availability({ selectedDate }: { selectedDate: SelectedD
                         Selected: {MONTH_NAMES[selectedSlot.month - 1]} {selectedSlot.day},{" "}
                         {formatSlotTime(selectedSlot.start)} – {formatSlotTime(selectedSlot.end)}
                     </p>
-                    <p className="text-zinc-500 text-xs mt-1">(Booking flow can be added next)</p>
+                    <p className="text-zinc-500 text-xs mt-1">(More functionality to be added)</p>
                 </div>
             )}
         </div>

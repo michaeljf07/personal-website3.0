@@ -1,13 +1,11 @@
-import { experienceData } from "./experienceData";
+import { experienceData } from "./hero/experienceData";
 import { ExternalLinkIcon } from "./icons";
 import Image from "next/image";
 
 export default function ExperiencePanel() {
     return (
         <section className="flex flex-col p-4 sm:p-5 h-4/5">
-            <div className="text-xs uppercase tracking-[0.15em] text-white/65 mb-3">
-                Experience
-            </div>
+            <div className="text-xs uppercase tracking-[0.15em] text-white/65 mb-3">Experience</div>
             <div className="flex flex-col gap-2.5 lg:flex-1 lg:min-h-0">
                 {experienceData.map((exp, i) => (
                     <div
@@ -43,13 +41,9 @@ export default function ExperiencePanel() {
                                             <ExternalLinkIcon className="w-3 h-3 shrink-0 opacity-70" />
                                         </a>
                                     ) : (
-                                        <span className="text-xs text-white/60">
-                                            {exp.company}
-                                        </span>
+                                        <span className="text-xs text-white/60">{exp.company}</span>
                                     )}
-                                    <span className="text-white/30 text-xs">
-                                        ·
-                                    </span>
+                                    <span className="text-white/30 text-xs">·</span>
                                     <span className="text-xs text-white/50">
                                         {exp.location.split(",")[0]}
                                     </span>
@@ -63,15 +57,13 @@ export default function ExperiencePanel() {
                             Array.isArray(exp.technologies) &&
                             exp.technologies.length > 0 && (
                                 <div className="flex gap-1.5 flex-wrap">
-                                    {(exp.technologies as string[])
-                                        .slice(0, 5)
-                                        .map((tech) => (
-                                            <span
-                                                key={tech}
-                                                className="text-xs px-1.5 py-0.5 border border-white/8 text-white/50 rounded-sm tracking-wide">
-                                                {tech}
-                                            </span>
-                                        ))}
+                                    {(exp.technologies as string[]).slice(0, 5).map((tech) => (
+                                        <span
+                                            key={tech}
+                                            className="text-xs px-1.5 py-0.5 border border-white/8 text-white/50 rounded-sm tracking-wide">
+                                            {tech}
+                                        </span>
+                                    ))}
                                 </div>
                             )}
                     </div>
