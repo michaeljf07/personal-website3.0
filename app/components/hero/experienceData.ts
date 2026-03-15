@@ -1,5 +1,14 @@
 export const experienceData = [
     {
+        title: "Full Stack Developer",
+        company: "Temerity Analytics",
+        companyUrl: "https://temerityanalytics.com/",
+        companyLogo: "/company_logos/temerityanalytics.png",
+        location: "Toronto, ON",
+        dates: "Incoming May 2026",
+        summary: "Full-stack web development and data engineering",
+    },
+    {
         title: "AI Engineering Intern",
         company: "Cache",
         companyUrl: "https://cacheinyourcloset.com",
@@ -21,8 +30,7 @@ export const experienceData = [
         companyLogo: "/company_logos/localreach.jpg",
         location: "Kingston, ON",
         dates: "Nov 2024 - Mar 2025",
-        summary:
-            "Full-stack, web performance, computer vision, and ML pipelines",
+        summary: "Full-stack, web performance, computer vision, and ML pipelines",
         technologies: ["Next.js", "YOLO", "OpenCV", "Python", "TensorFlow"],
         description: [
             "Refactored the website to leverage SSR and SSG techniques, reducing client-side bundle size by 68% and improving initial page load time from 2.8s to 0.9s.",

@@ -3,14 +3,16 @@
 import { useState, useMemo, Fragment } from "react";
 import { DateTime } from "luxon";
 import { ChevronLeftIcon, ChevronRightIcon } from "../icons";
+import type { SelectedDate } from "./types";
 
-export default function Calendar() {
+export default function Calendar({
+    selectedDate,
+    setSelectedDate,
+}: {
+    selectedDate: SelectedDate;
+    setSelectedDate: (date: SelectedDate) => void;
+}) {
     const [monthOffset, setMonthOffset] = useState(0);
-    const [selectedDate, setSelectedDate] = useState<{
-        day: number;
-        month: number;
-        year: number;
-    } | null>(null);
 
     const date: DateTime = useMemo(
         () => DateTime.local().startOf("month").minus({ months: monthOffset }),
