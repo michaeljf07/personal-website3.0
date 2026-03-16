@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { GitHubIcon, LinkedInIcon, InstagramIcon } from "../icons";
+import { GitHubIcon, LinkedInIcon, InstagramIcon, RightArrowIcon, CalendarIcon } from "../icons";
+import Link from "next/link";
 
 const socialLinks = [
     {
@@ -61,9 +62,8 @@ export default function AboutPanel() {
 
             {/* Bio */}
             <p className="text-sm text-gray-300 leading-relaxed">
-                Double degree student passionate about building at the
-                intersection of technology and business. I love tinkering and
-                making cool things.
+                Double degree student passionate about building at the intersection of technology
+                and business. I love tinkering and making cool things.
             </p>
 
             {/* Education */}
@@ -75,7 +75,7 @@ export default function AboutPanel() {
                     {education.map(({ logo, alt, degree, school }) => (
                         <div
                             key={school}
-                            className="flex items-center gap-2.5 p-2.5 rounded-lg border border-white/[0.07] bg-white/2.5">
+                            className="flex items-center gap-2.5 p-2.5 rounded-lg border border-white/7 bg-white/2.5">
                             <div className="relative w-10 h-10 shrink-0">
                                 <Image
                                     src={logo}
@@ -86,12 +86,8 @@ export default function AboutPanel() {
                                 />
                             </div>
                             <div>
-                                <div className="text-sm font-medium text-white/85">
-                                    {degree}
-                                </div>
-                                <div className="text-xs text-white/55">
-                                    {school}
-                                </div>
+                                <div className="text-sm font-medium text-white/85">{degree}</div>
+                                <div className="text-xs text-white/55">{school}</div>
                             </div>
                         </div>
                     ))}
