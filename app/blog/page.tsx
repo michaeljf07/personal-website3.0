@@ -17,10 +17,8 @@ export default function Blog() {
                     <Link
                         href="/"
                         className="w-full sm:w-auto sm:mx-auto flex items-center justify-center gap-2 min-h-10 px-6 py-3 rounded-xl border border-white/7 bg-white/2.5 hover:bg-white/5 hover:border-white/14 active:scale-95 active:bg-white/7 transition-all duration-200 touch-manipulation lg:mt-4">
-                        <span className="text-sm font-medium text-white/95">
-                            Home
-                        </span>
                         <ArrowLeftIcon className="w-5 h-5 text-white/90" />
+                        <span className="text-sm font-medium text-white/95">Home</span>
                     </Link>
                 </div>
             </header>

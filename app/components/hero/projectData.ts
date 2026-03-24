@@ -1,5 +1,14 @@
 export const projects = [
     {
+        title: "Mock API Server for TypeScript",
+        description:
+            "An npm CLI package for generating mock API servers from TypeScript schema files to streamline the development process.",
+        githubUrl: "https://github.com/michaeljf07/Mock-API",
+        image: "/project_images/mock_api.png",
+        demoUrl: "/demos/mock_api_demo.mp4",
+        technologies: ["TypeScript", "API", "Express", "Backend", "CLI", "Web Development", "npm"],
+    },
+    {
         title: "Sublet Centre",
         description:
             "A web application that connects students looking for sublets with those offering them, featuring search, listings, and user authentication.",
