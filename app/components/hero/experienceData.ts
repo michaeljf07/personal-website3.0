@@ -7,6 +7,7 @@ export const experienceData = [
         location: "Toronto, ON",
         dates: "Incoming May 2026",
         summary: "Full-stack web development and data engineering",
+        technologies: [],
     },
     {
         title: "AI Engineering Intern",
