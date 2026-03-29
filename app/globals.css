@@ -1,10 +1,5 @@
 @import "tailwindcss";
 
-:root {
-    --background: #080808;
-    --foreground: #ffffff;
-}
-
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -13,8 +8,8 @@ html {
 }
 
 body {
-    background-color: #0f0f0f;
-    color: #d4d4d4;
+    background-color: #191919;
+    color: rgba(255, 255, 255, 0.87);
     overflow-x: hidden;
     overflow-y: auto;
     min-height: 100%;
@@ -24,7 +19,6 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
-/* Enable momentum scrolling on iOS for scroll containers */
 .overflow-y-auto {
     -webkit-overflow-scrolling: touch;
 }
