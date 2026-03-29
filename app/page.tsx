@@ -1,16 +1,13 @@
-import { GitHubIcon, LinkedInIcon, InstagramIcon, ExternalLinkIcon } from "./components/icons";
+import { ExternalLinkIcon, GitHubIcon, InstagramIcon, LinkedInIcon } from "./components/icons";
 import AboutPanel from "./components/hero/AboutPanel";
 import ExperiencePanel from "./components/hero/ExperiencePanel";
 import ProjectsPanel from "./components/hero/ProjectsPanel";
 import BlogPanel from "./components/hero/BlogPanel";
-import BackgroundImage from "./components/BackgroundImage";
 
 export default function Home() {
     return (
-        <div className="h-dvh min-h-screen lg:h-screen overflow-y-auto lg:overflow-hidden touch-pan-y bg-[#080808] text-white flex flex-col pb-[env(safe-area-inset-bottom)]">
-            <BackgroundImage />
-
-            <header className="relative z-10 flex items-center justify-between px-4 sm:px-6 pt-[env(safe-area-inset-top)] h-14 shrink-0 border-b border-white/[0.07]">
+        <div className="h-dvh min-h-screen lg:h-screen overflow-y-auto lg:overflow-hidden touch-pan-y bg-gray-950 text-white/90 flex flex-col pb-[env(safe-area-inset-bottom)]">
+            <header className="relative z-10 flex items-center justify-between px-4 sm:px-6 pt-[env(safe-area-inset-top)] h-14 shrink-0 border-b border-white/7">
                 <div className="flex items-baseline gap-4">
                     <span className="text-lg font-bold tracking-tight text-white hidden sm:inline">
                         Michael Ferreira
@@ -56,9 +53,9 @@ export default function Home() {
                 </div>
             </header>
 
-            <div className="relative z-10 flex-none lg:flex-1 min-h-0 overflow-visible lg:overflow-hidden grid grid-cols-1 lg:grid-cols-[260px_1fr_1fr] lg:min-h-0 divide-y lg:divide-y-0 lg:divide-x divide-white/6">
+            <div className="flex-none lg:flex-1 min-h-0 overflow-visible lg:overflow-hidden grid grid-cols-1 lg:grid-cols-[280px_1fr_1fr] lg:min-h-0 lg:[&>*]:min-h-0 divide-y lg:divide-y-0 lg:divide-x divide-white/6">
                 <AboutPanel />
-                <div>
+                <div className="flex flex-col divide-y divide-white/6 lg:min-h-0 lg:overflow-hidden">
                     <ExperiencePanel />
                     <BlogPanel />
                 </div>
