@@ -1,31 +1,130 @@
 @import "tailwindcss";
 
+:root {
+    --color-bg: #ffffff;
+    --color-bg-main: #e8eaf4;
+    --color-bg-dot: rgb(100 108 145 / 0.38);
+    --color-bg-card: rgb(255 255 255 / 0.65);
+    --color-bg-tag: #f0f2fa;
+    --color-bg-speech: #ebe8f6;
+    --color-bg-speech-border: #c4bed8;
+    --color-border-strong: #1a1a1a;
+    --color-border-subtle: #c4c0d8;
+    --color-border-muted: #d5d2e8;
+    --color-border-sidebar: #e0dff0;
+    --color-border-card: #c4c0d8;
+    --color-border-dashed: rgb(148 152 192 / 0.55);
+    --color-text: #1a1a1a;
+    --color-text-body: #2a3242;
+    --color-text-muted: #445060;
+    --color-text-secondary: #6a6d82;
+    --color-text-soft: #7a8198;
+    --color-text-dates: #7a8198;
+    --color-text-speech: #3d4558;
+    --color-link: #5c5fa8;
+    --color-link-accent: #4a4d90;
+    --color-hover-ink: #1a1a1a;
+    --color-accent-line: #9498c0;
+    --color-sparkle: #9ca0c0;
+    --color-icon-muted: #8b90b8;
+    --color-btn-primary-bg: #7b80e1;
+    --color-btn-primary-hover: #5e63c3;
+    --color-footer-muted: #9ca0b8;
+    --color-bg-section-card: color-mix(in srgb, var(--color-bg-main) 22%, white 78%);
+    --color-bg-section-card-hover: #ebe8f6;
+
+    --headshot-height: 250px;
+    --speech-tail-overlap: 20px;
+    --speech-tail-size: 16px;
+    --speech-tail-border: 8px;
+    --speech-tail-offset: 17px;
+}
+
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
 }
 
 body {
-    background-color: #191919;
-    color: rgba(255, 255, 255, 0.87);
-    overflow-x: hidden;
-    overflow-y: auto;
-    min-height: 100%;
-    font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
 }
 
-.overflow-y-auto {
-    -webkit-overflow-scrolling: touch;
+/* Dotted background for content panel */
+.dot-bg {
+    background-color: var(--color-bg-main);
+    background-image: radial-gradient(circle, var(--color-bg-dot) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
 }
 
-@media (min-width: 1024px) {
-    html,
-    body {
-        overflow: hidden;
-    }
+/* Speech bubble with downward-pointing tail (tail overlaps headshot via --speech-tail-overlap) */
+.speech-bubble {
+    position: relative;
+    z-index: 1;
+    background: var(--color-bg-speech);
+    border: 1.5px solid var(--color-bg-speech-border);
+    border-radius: 14px;
+    padding: 10px 14px;
+    line-height: 1.45;
+    margin-bottom: 0;
+}
+
+.speech-bubble::after {
+    content: "";
+    position: absolute;
+    bottom: calc(-1 * var(--speech-tail-offset));
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: var(--speech-tail-border) solid transparent;
+    border-right: var(--speech-tail-border) solid transparent;
+    border-top: var(--speech-tail-size) solid var(--color-bg-speech-border);
+}
+
+.speech-bubble::before {
+    content: "";
+    position: absolute;
+    bottom: calc(-1 * var(--speech-tail-offset) + 3px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: calc(var(--speech-tail-border) - 2px) solid transparent;
+    border-right: calc(var(--speech-tail-border) - 2px) solid transparent;
+    border-top: calc(var(--speech-tail-size) - 2px) solid var(--color-bg-speech);
+    z-index: 1;
+}
+
+/* Fixed headshot + tail overlap: pull image stack up so the tail meets the hairline */
+.sidebar-headshot {
+    position: relative;
+    height: var(--headshot-height);
+    min-height: var(--headshot-height);
+    flex-shrink: 0;
+    width: 100%;
+    margin-top: calc(-1 * var(--speech-tail-overlap));
+    z-index: 0;
+}
+
+/* Scrollbar styling */
+.content-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.content-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.content-scroll::-webkit-scrollbar-thumb {
+    background: rgb(148 152 192 / 0.45);
+    border-radius: 3px;
+}
+
+.content-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgb(148 152 192 / 0.72);
 }

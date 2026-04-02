@@ -17,76 +17,89 @@ const education = [
 
 export default function AboutPanel() {
     return (
-        <section className="flex min-h-0 flex-col gap-5 p-5 sm:p-6 lg:h-full lg:overflow-y-auto">
-            <div className="flex flex-col gap-3 items-center">
-                <div className="relative w-72 h-72 lg:w-36 lg:h-36 rounded-lg overflow-hidden border border-white/8 shrink-0">
-                    <Image
-                        src="/headshots/headshot2.jpg"
-                        alt="Michael Ferreira"
-                        fill
-                        className="object-cover"
-                    />
-                </div>
-                <div>
-                    <h1 className="text-xl font-semibold text-gray-100 tracking-tight leading-tight text-center">
-                        Michael Ferreira
-                    </h1>
-                    <p className="text-sm text-gray-400 mt-0.5 text-center">Software Engineer</p>
-                </div>
+        <div className="space-y-6 max-w-3xl">
+            <div className="space-y-4">
+                <p className="text-base text-(--color-text-body) leading-relaxed">
+                    I study computer science at the{" "}
+                    <strong className="text-(--color-text)">University of Waterloo</strong>{" "}
+                    alongside a business degree at{" "}
+                    <strong className="text-(--color-text)">Wilfrid Laurier University</strong>.
+                    I&apos;m currenly working as a software engineer at Cache, building web and iOS
+                    apps that connects influencers directly with their followers through fashion
+                    resale.
+                </p>
+                <p className="text-base text-(--color-text-body) leading-relaxed">
+                    When I&apos;m not in the terminal, you&apos;ll probably find me at the gym,
+                    reading a book, or working on a side project! I&apos;m always looking for
+                    interesting problems to fix and people to collaborate with.
+                </p>
             </div>
 
-            <p className="text-sm text-gray-300 leading-relaxed border-l border-gray-400 pl-3">
-                I'm a double degree student passionate about building things at the intersection of
-                technology and business.
-            </p>
-
-            <div className="flex flex-col gap-0">
-                <div className="text-xs text-gray-400 uppercase tracking-[0.14em] mb-2">
-                    Properties
+            <div className="flex flex-wrap gap-3">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-(--color-bg-section-card) border border-(--color-border-card) text-sm text-(--color-text-muted)">
+                    <span className="text-base">📍</span>
+                    <span>Waterloo, ON</span>
                 </div>
-                <div className="flex flex-col">
-                    <div className="flex items-center gap-3 py-1.5 border-b border-gray-400/20">
-                        <span className="text-xs text-gray-300 w-20 shrink-0">Degrees</span>
-                        <span className="text-xs text-gray-300">CS + BBA</span>
-                    </div>
-                    <div className="flex items-center gap-3 py-1.5 border-b border-gray-400/20">
-                        <span className="text-xs text-gray-300 w-20 shrink-0">Location</span>
-                        <span className="text-xs text-gray-300">Waterloo, ON</span>
-                    </div>
-                    <div className="flex items-center gap-3 py-1.5">
-                        <span className="text-xs text-gray-300 w-20 shrink-0">Status</span>
-                        <span className="inline-flex items-center gap-1.5 text-xs text-gray-300">
-                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/70 shrink-0" />
-                            Open to work
-                        </span>
-                    </div>
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-(--color-bg-section-card) border border-(--color-border-card) text-sm text-(--color-text-muted)">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0 animate-pulse" />
+                    <span>Open to Collaborate</span>
                 </div>
+                <a
+                    href="/resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-(--color-btn-primary-bg) text-white text-sm hover:bg-(--color-btn-primary-hover) transition-colors">
+                    <span>Resume</span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="13"
+                        height="13"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" x2="21" y1="14" y2="3" />
+                    </svg>
+                </a>
             </div>
 
-            <div className="flex flex-col gap-2">
-                <div className="text-xs text-gray-400 uppercase tracking-[0.14em] mb-1">
+            <div>
+                <p
+                    className="text-xs uppercase tracking-widest text-(--color-accent-line) mb-3"
+                    style={{ fontFamily: "var(--font-inter), sans-serif" }}>
                     Education
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                    {education.map(({ logo, alt, degree, school }) => (
+                        <div
+                            key={school}
+                            className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-(--color-bg-section-card) border border-(--color-border-card) backdrop-blur-sm">
+                            <div className="relative w-10 h-10 shrink-0">
+                                <Image
+                                    src={logo}
+                                    alt={alt}
+                                    width={40}
+                                    height={40}
+                                    className="object-contain"
+                                />
+                            </div>
+                            <div>
+                                <div className="text-sm font-semibold text-(--color-text)">
+                                    {degree}
+                                </div>
+                                <div className="text-xs text-(--color-text-secondary)">
+                                    {school}
+                                </div>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-                {education.map(({ logo, alt, degree, school }) => (
-                    <div
-                        key={school}
-                        className="flex items-center gap-3 py-1.5 px-3 rounded-md border border-white/6 bg-white/2 hover:bg-white/4 transition-colors">
-                        <div className="relative w-10 h-10 shrink-0">
-                            <Image
-                                src={logo}
-                                alt={alt}
-                                width={40}
-                                height={40}
-                                className="object-contain"
-                            />
-                        </div>
-                        <div>
-                            <div className="text-sm font-medium text-gray-300">{degree}</div>
-                            <div className="text-xs text-gray-300">{school}</div>
-                        </div>
-                    </div>
-                ))}
             </div>
-        </section>
+        </div>
     );
 }
