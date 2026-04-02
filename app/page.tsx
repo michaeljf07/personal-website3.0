@@ -1,66 +1,42 @@
-import { ExternalLinkIcon, GitHubIcon, InstagramIcon, LinkedInIcon } from "./components/icons";
+import Sidebar from "./components/Sidebar";
+import SectionHeading from "./components/SectionHeading";
 import AboutPanel from "./components/hero/AboutPanel";
 import ExperiencePanel from "./components/hero/ExperiencePanel";
 import ProjectsPanel from "./components/hero/ProjectsPanel";
-import BlogPanel from "./components/hero/BlogPanel";
 
 export default function Home() {
     return (
-        <div className="h-dvh min-h-screen lg:h-screen overflow-y-auto lg:overflow-hidden touch-pan-y bg-gray-950 text-white/90 flex flex-col pb-[env(safe-area-inset-bottom)]">
-            <header className="relative z-10 flex items-center justify-between px-4 sm:px-6 pt-[env(safe-area-inset-top)] h-14 shrink-0 border-b border-white/7">
-                <div className="flex items-baseline gap-4">
-                    <span className="text-lg font-bold tracking-tight text-white hidden sm:inline">
-                        Michael Ferreira
-                    </span>
-                    <span className="text-sm tracking-[0.16em] uppercase text-gray-400">
-                        Software Engineer
-                    </span>
-                </div>
-                <div className="flex items-center gap-4">
-                    <a
-                        href="/resume.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 -m-2 text-white/50 hover:text-white/90 transition-colors touch-manipulation flex items-center gap-1.5 text-sm"
-                        aria-label="Resume">
-                        <span>Resume</span>
-                        <ExternalLinkIcon className="w-4 h-4" />
-                    </a>
-                    <a
-                        href="https://github.com/michaeljf07"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 -m-2 text-white/50 hover:text-white/90 transition-colors touch-manipulation"
-                        aria-label="GitHub">
-                        <GitHubIcon className="w-5 h-5" />
-                    </a>
-                    <a
-                        href="https://linkedin.com/in/michael-j-ferreira"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 -m-2 text-white/50 hover:text-white/90 transition-colors touch-manipulation"
-                        aria-label="LinkedIn">
-                        <LinkedInIcon className="w-5 h-5" />
-                    </a>
-                    <a
-                        href="https://instagram.com/michael.ferreira07"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 -m-2 text-white/50 hover:text-white/90 transition-colors touch-manipulation"
-                        aria-label="Instagram">
-                        <InstagramIcon className="w-5 h-5" />
-                    </a>
-                </div>
-            </header>
+        <div className="flex flex-col lg:flex-row min-h-screen lg:h-screen lg:overflow-hidden">
+            <Sidebar />
 
-            <div className="flex-none lg:flex-1 min-h-0 overflow-visible lg:overflow-hidden grid grid-cols-1 lg:grid-cols-[280px_1fr_1fr] lg:min-h-0 lg:[&>*]:min-h-0 divide-y lg:divide-y-0 lg:divide-x divide-white/6">
-                <AboutPanel />
-                <div className="flex flex-col divide-y divide-white/6 lg:min-h-0 lg:overflow-hidden">
-                    <ExperiencePanel />
-                    <BlogPanel />
+            <main id="main-scroll" className="flex-1 overflow-y-auto content-scroll dot-bg">
+                <div className="mx-12 sm:mx-16">
+                    <section
+                        id="about"
+                        className="py-10 border-b border-dashed border-(--color-border-dashed)">
+                        <div className="rounded-3xl bg-(--color-bg-card)/40 border border-(--color-border-card) backdrop-blur-sm p-6">
+                            <SectionHeading>Hi, I&apos;m Michael!</SectionHeading>
+                            <AboutPanel />
+                        </div>
+                    </section>
+
+                    <section
+                        id="experience"
+                        className="py-10 border-b border-dashed border-(--color-border-dashed)">
+                        <div className="rounded-3xl bg-(--color-bg-card)/40 border border-(--color-border-card) backdrop-blur-sm p-6">
+                            <SectionHeading>Experience</SectionHeading>
+                            <ExperiencePanel />
+                        </div>
+                    </section>
+
+                    <section id="projects" className="py-10">
+                        <div className="rounded-3xl bg-(--color-bg-card)/40 border border-(--color-border-card) backdrop-blur-sm p-6">
+                            <SectionHeading>Projects</SectionHeading>
+                            <ProjectsPanel />
+                        </div>
+                    </section>
                 </div>
-                <ProjectsPanel />
-            </div>
+            </main>
         </div>
     );
 }

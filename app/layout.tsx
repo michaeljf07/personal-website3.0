@@ -1,10 +1,24 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Caveat, Permanent_Marker } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
     subsets: ["latin"],
     variable: "--font-inter",
+    display: "swap",
+});
+
+const caveat = Caveat({
+    subsets: ["latin"],
+    variable: "--font-caveat",
+    display: "swap",
+});
+
+const permanentMarker = Permanent_Marker({
+    subsets: ["latin"],
+    weight: "400",
+    variable: "--font-permanent-marker",
+    display: "swap",
 });
 
 const siteUrl =
@@ -122,8 +136,10 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <body className={`${inter.variable} antialiased`}>
+        <html
+            lang="en"
+            className={`${inter.variable} ${caveat.variable} ${permanentMarker.variable}`}>
+            <body className="antialiased">
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
