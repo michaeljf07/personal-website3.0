@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Caveat, Permanent_Marker } from "next/font/google";
+import { getSiteUrl } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -21,9 +22,7 @@ const permanentMarker = Permanent_Marker({
     display: "swap",
 });
 
-const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ||
-    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteUrl),
