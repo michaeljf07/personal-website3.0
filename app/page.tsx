@@ -9,12 +9,14 @@ export default function Home() {
         <div className="flex flex-col lg:flex-row min-h-screen lg:h-screen lg:overflow-hidden">
             <Sidebar />
 
-            <main id="main-scroll" className="flex-1 overflow-y-auto content-scroll dot-bg">
-                <div className="mx-12 sm:mx-16">
+            <main
+                id="main-scroll"
+                className="w-full flex-none content-scroll dot-bg max-lg:overflow-x-hidden lg:flex-1 lg:min-h-0 lg:overflow-y-auto">
+                <div className="mx-4 sm:mx-9 md:mx-12 lg:mx-16 pb-[env(safe-area-inset-bottom)]">
                     <section
                         id="about"
-                        className="py-10 border-b border-dashed border-(--color-border-dashed)">
-                        <div className="rounded-3xl bg-(--color-bg-card)/40 border border-(--color-border-card) backdrop-blur-sm p-6">
+                        className="scroll-mt-4 sm:scroll-mt-6 py-8 sm:py-10 border-b border-dashed border-(--color-border-dashed)">
+                        <div className="rounded-2xl sm:rounded-3xl bg-(--color-bg-card)/40 border border-(--color-border-card) backdrop-blur-sm max-lg:backdrop-blur-none p-4 sm:p-6">
                             <SectionHeading>Hi, I&apos;m Michael!</SectionHeading>
                             <AboutPanel />
                         </div>
@@ -22,15 +24,17 @@ export default function Home() {
 
                     <section
                         id="experience"
-                        className="py-10 border-b border-dashed border-(--color-border-dashed)">
-                        <div className="rounded-3xl bg-(--color-bg-card)/40 border border-(--color-border-card) backdrop-blur-sm p-6">
+                        className="scroll-mt-4 sm:scroll-mt-6 py-8 sm:py-10 border-b border-dashed border-(--color-border-dashed)">
+                        <div className="rounded-2xl sm:rounded-3xl bg-(--color-bg-card)/40 border border-(--color-border-card) backdrop-blur-sm max-lg:backdrop-blur-none p-4 sm:p-6">
                             <SectionHeading>Experience</SectionHeading>
                             <ExperiencePanel />
                         </div>
                     </section>
 
-                    <section id="projects" className="py-10">
-                        <div className="rounded-3xl bg-(--color-bg-card)/40 border border-(--color-border-card) backdrop-blur-sm p-6">
+                    <section
+                        id="projects"
+                        className="scroll-mt-4 sm:scroll-mt-6 py-8 sm:py-10 pb-10">
+                        <div className="rounded-2xl sm:rounded-3xl bg-(--color-bg-card)/40 border border-(--color-border-card) backdrop-blur-sm max-lg:backdrop-blur-none p-4 sm:p-6">
                             <SectionHeading>Projects</SectionHeading>
                             <ProjectsPanel />
                         </div>

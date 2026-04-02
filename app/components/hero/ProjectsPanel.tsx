@@ -9,13 +9,13 @@ export default function ProjectsPanel() {
                 return (
                     <div
                         key={i}
-                        className="relative group rounded-2xl bg-(--color-bg-section-card) border border-(--color-border-card) hover:bg-(--color-bg-section-card-hover) transition-colors duration-150 p-4 backdrop-blur-sm flex flex-col">
+                        className="relative group rounded-2xl bg-(--color-bg-section-card) border border-(--color-border-card) hover:bg-(--color-bg-section-card-hover) transition-colors duration-150 p-4 backdrop-blur-sm max-lg:backdrop-blur-none flex flex-col">
                         {project.githubUrl && (
                             <a
                                 href={project.githubUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="absolute top-3.5 right-3.5 text-(--color-accent-line) hover:text-(--color-hover-ink) transition-colors z-20"
+                                className="absolute top-2 right-2 sm:top-3.5 sm:right-3.5 z-20 inline-flex min-h-11 min-w-11 sm:min-h-0 sm:min-w-0 items-center justify-center touch-manipulation rounded-lg text-(--color-accent-line) hover:text-(--color-hover-ink) active:opacity-80 transition-colors"
                                 aria-label={`View ${project.title} on GitHub`}>
                                 <GitHubIcon className="w-4 h-4" />
                             </a>
@@ -26,9 +26,10 @@ export default function ProjectsPanel() {
                                 href={demoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="absolute inset-0 rounded-2xl z-10"
-                                aria-label={`View ${project.title} demo`}
-                            />
+                                className="absolute inset-0 z-10 cursor-pointer touch-manipulation rounded-2xl"
+                                aria-label={`View ${project.title} demo`}>
+                                <span className="sr-only">Open video demo for {project.title}</span>
+                            </a>
                         )}
 
                         <div className="relative z-0 pr-6 flex flex-col flex-1">

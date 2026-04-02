@@ -35,12 +35,12 @@ export default function AboutPanel() {
                 </p>
             </div>
 
-            <div className="flex flex-wrap gap-3">
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-(--color-bg-section-card) border border-(--color-border-card) text-sm text-(--color-text-muted)">
+            <div className="flex flex-wrap gap-2.5 sm:gap-3 justify-center sm:justify-start">
+                <div className="flex items-center gap-2 px-3 py-2 sm:py-1.5 rounded-full bg-(--color-bg-section-card) border border-(--color-border-card) text-sm text-(--color-text-muted)">
                     <span className="text-base">📍</span>
                     <span>Waterloo, ON</span>
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-(--color-bg-section-card) border border-(--color-border-card) text-sm text-(--color-text-muted)">
+                <div className="flex items-center gap-2 px-3 py-2 sm:py-1.5 rounded-full bg-(--color-bg-section-card) border border-(--color-border-card) text-sm text-(--color-text-muted)">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0 animate-pulse" />
                     <span>Open to Collaborate</span>
                 </div>
@@ -48,7 +48,7 @@ export default function AboutPanel() {
                     href="/resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-(--color-btn-primary-bg) text-white text-sm hover:bg-(--color-btn-primary-hover) transition-colors">
+                    className="inline-flex items-center gap-2 px-4 py-2.5 sm:px-3 sm:py-1.5 rounded-full touch-manipulation bg-(--color-btn-primary-bg) text-white text-sm hover:bg-(--color-btn-primary-hover) active:opacity-90 transition-colors">
                     <span>Resume</span>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +78,7 @@ export default function AboutPanel() {
                     {education.map(({ logo, alt, degree, school }) => (
                         <div
                             key={school}
-                            className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-(--color-bg-section-card) border border-(--color-border-card) backdrop-blur-sm">
+                            className="flex items-center gap-3 px-3.5 py-3 sm:px-4 rounded-2xl bg-(--color-bg-section-card) border border-(--color-border-card) backdrop-blur-sm max-lg:backdrop-blur-none">
                             <div className="relative w-10 h-10 shrink-0">
                                 <Image
                                     src={logo}
