@@ -23,32 +23,29 @@ export default function Sidebar() {
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setActiveSection(entry.target.id);
-                    }
-                });
+                const best = entries
+                    .filter((e) => e.isIntersecting)
+                    .reduce<IntersectionObserverEntry | null>(
+                        (a, b) => (!a || b.intersectionRatio > a.intersectionRatio ? b : a),
+                        null,
+                    );
+                if (best) {
+                    setActiveSection(best.target.id);
+                }
             },
-            {
-                rootMargin: "-25% 0px -65% 0px",
-            },
+            { rootMargin: "-18% 0px -52% 0px", threshold: [0, 0.1, 0.25, 0.5] },
         );
-
-        navItems.forEach(({ id }) => {
+        for (const { id } of navItems) {
             const el = document.getElementById(id);
-            if (el) observer.observe(el);
-        });
-
+            if (el) {
+                observer.observe(el);
+            }
+        }
         return () => observer.disconnect();
     }, []);
 
     function scrollToSection(id: string) {
-        const mainEl = document.getElementById("main-scroll");
-        const targetEl = document.getElementById(id);
-        if (mainEl && targetEl) {
-            const topOffset = targetEl.offsetTop - 24;
-            mainEl.scrollTo({ top: topOffset, behavior: "smooth" });
-        }
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
     return (
@@ -74,11 +71,11 @@ export default function Sidebar() {
                 </div>
             </div>
 
-            <div className="flex items-center justify-center gap-5 py-3 shrink-0">
+            <div className="flex items-center justify-center gap-1 sm:gap-5 py-3 shrink-0">
                 <a
                     href="mailto:michael.ferreira@uwaterloo.ca"
                     aria-label="Email"
-                    className="text-(--color-link) hover:text-(--color-hover-ink) transition-colors">
+                    className="inline-flex h-11 w-11 sm:h-auto sm:w-auto items-center justify-center touch-manipulation text-(--color-link) hover:text-(--color-hover-ink) active:opacity-80 transition-colors rounded-lg max-lg:active:bg-(--color-bg-section-card)">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
@@ -99,7 +96,7 @@ export default function Sidebar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
-                    className="text-(--color-link) hover:text-(--color-hover-ink) transition-colors">
+                    className="inline-flex h-11 w-11 sm:h-auto sm:w-auto items-center justify-center touch-manipulation text-(--color-link) hover:text-(--color-hover-ink) active:opacity-80 transition-colors rounded-lg max-lg:active:bg-(--color-bg-section-card)">
                     <LinkedInIcon className="w-5 h-5" />
                 </a>
                 <a
@@ -107,7 +104,7 @@ export default function Sidebar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub"
-                    className="text-(--color-link) hover:text-(--color-hover-ink) transition-colors">
+                    className="inline-flex h-11 w-11 sm:h-auto sm:w-auto items-center justify-center touch-manipulation text-(--color-link) hover:text-(--color-hover-ink) active:opacity-80 transition-colors rounded-lg max-lg:active:bg-(--color-bg-section-card)">
                     <GitHubIcon className="w-5 h-5" />
                 </a>
                 <a
@@ -115,7 +112,7 @@ export default function Sidebar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
-                    className="text-(--color-link) hover:text-(--color-hover-ink) transition-colors">
+                    className="inline-flex h-11 w-11 sm:h-auto sm:w-auto items-center justify-center touch-manipulation text-(--color-link) hover:text-(--color-hover-ink) active:opacity-80 transition-colors rounded-lg max-lg:active:bg-(--color-bg-section-card)">
                     <InstagramIcon className="w-5 h-5" />
                 </a>
             </div>
@@ -124,8 +121,9 @@ export default function Sidebar() {
                 {navItems.map(({ id, label }) => (
                     <button
                         key={id}
+                        type="button"
                         onClick={() => scrollToSection(id)}
-                        className={`text-[1.05rem] transition-all duration-150 px-4 py-0.5 rounded-full cursor-pointer ${
+                        className={`text-[1.05rem] touch-manipulation transition-all duration-150 px-4 py-2 sm:py-0.5 rounded-full cursor-pointer ${
                             activeSection === id
                                 ? "font-bold text-(--color-text) border-2 border-(--color-border-strong)"
                                 : "font-normal text-(--color-text-secondary) hover:text-(--color-hover-ink) border-2 border-transparent"
@@ -141,12 +139,12 @@ export default function Sidebar() {
                         {sectionMessages[activeSection]}
                     </div>
                 </div>
-                <div className="sidebar-headshot">
+                <div className="sidebar-headshot pointer-events-none">
                     <Image
                         src="/headshots/headshot_bg_removed.png"
                         alt="Michael Ferreira"
                         fill
-                        className="object-contain object-bottom"
+                        className="object-contain object-bottom pointer-events-none select-none"
                         priority
                     />
                 </div>
@@ -161,7 +159,7 @@ export default function Sidebar() {
                     href="https://rubylu.dev"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline hover:text-(--color-hover-ink) transition-colors">
+                    className="underline touch-manipulation hover:text-(--color-hover-ink) transition-colors">
                     Ruby Lu
                 </a>
             </p>
