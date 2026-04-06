@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { GitHubIcon, LinkedInIcon, InstagramIcon } from "./icons";
 
@@ -19,32 +19,106 @@ const sectionMessages: Record<string, string> = {
 
 export default function Sidebar() {
     const [activeSection, setActiveSection] = useState("about");
+    const pendingSectionRef = useRef<string | null>(null);
+    const pendingTimeoutRef = useRef<number | null>(null);
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                const best = entries
-                    .filter((e) => e.isIntersecting)
-                    .reduce<IntersectionObserverEntry | null>(
-                        (a, b) => (!a || b.intersectionRatio > a.intersectionRatio ? b : a),
-                        null,
-                    );
-                if (best) {
-                    setActiveSection(best.target.id);
-                }
-            },
-            { rootMargin: "-18% 0px -52% 0px", threshold: [0, 0.1, 0.25, 0.5] },
-        );
-        for (const { id } of navItems) {
-            const el = document.getElementById(id);
-            if (el) {
-                observer.observe(el);
-            }
+        const scrollContainer = document.getElementById("main-scroll");
+        const sections = navItems
+            .map(({ id }) => document.getElementById(id))
+            .filter((section): section is HTMLElement => section !== null);
+        const scrollRoot =
+            scrollContainer && getComputedStyle(scrollContainer).overflowY !== "visible"
+                ? scrollContainer
+                : window;
+
+        function getViewportHeight() {
+            return scrollRoot === window ? window.innerHeight : scrollContainer!.clientHeight;
         }
-        return () => observer.disconnect();
+
+        function isNearBottom() {
+            if (scrollRoot === window) {
+                const doc = document.documentElement;
+                return window.innerHeight + window.scrollY >= doc.scrollHeight - 4;
+            }
+
+            return (
+                scrollContainer!.scrollTop + scrollContainer!.clientHeight >=
+                scrollContainer!.scrollHeight - 4
+            );
+        }
+
+        function syncActiveSection() {
+            if (sections.length === 0) {
+                return;
+            }
+
+            const activationLine = getViewportHeight() * 0.28;
+            let nextActive = sections[0].id;
+
+            if (isNearBottom()) {
+                nextActive = sections[sections.length - 1].id;
+            } else {
+                for (const section of sections) {
+                    if (section.getBoundingClientRect().top <= activationLine) {
+                        nextActive = section.id;
+                    } else {
+                        break;
+                    }
+                }
+            }
+
+            const pendingId = pendingSectionRef.current;
+            if (pendingId) {
+                const pendingSection = document.getElementById(pendingId);
+                const pendingTop = pendingSection?.getBoundingClientRect().top;
+                const targetReached = pendingTop !== undefined && Math.abs(pendingTop) <= 12;
+
+                if (!targetReached) {
+                    setActiveSection(pendingId);
+                    return;
+                }
+
+                pendingSectionRef.current = null;
+                if (pendingTimeoutRef.current !== null) {
+                    window.clearTimeout(pendingTimeoutRef.current);
+                    pendingTimeoutRef.current = null;
+                }
+            }
+
+            setActiveSection((current) => (current === nextActive ? current : nextActive));
+        }
+
+        function onScroll() {
+            syncActiveSection();
+        }
+
+        syncActiveSection();
+        scrollRoot.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", syncActiveSection);
+
+        return () => {
+            scrollRoot.removeEventListener("scroll", onScroll);
+            window.removeEventListener("resize", syncActiveSection);
+            if (pendingTimeoutRef.current !== null) {
+                window.clearTimeout(pendingTimeoutRef.current);
+            }
+        };
     }, []);
 
     function scrollToSection(id: string) {
+        pendingSectionRef.current = id;
+        setActiveSection(id);
+
+        if (pendingTimeoutRef.current !== null) {
+            window.clearTimeout(pendingTimeoutRef.current);
+        }
+
+        pendingTimeoutRef.current = window.setTimeout(() => {
+            pendingSectionRef.current = null;
+            pendingTimeoutRef.current = null;
+        }, 1500);
+
         document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
