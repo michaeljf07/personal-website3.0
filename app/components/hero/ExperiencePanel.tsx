@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function ExperiencePanel() {
     return (
-        <div className="flex flex-col gap-3 max-w-3xl">
+        <div className="flex flex-col gap-3 w-full">
             {experienceData.map((exp, i) => (
                 <div
                     key={i}

@@ -17,8 +17,8 @@ const education = [
 
 export default function AboutPanel() {
     return (
-        <div className="space-y-6 max-w-3xl">
-            <div className="space-y-4">
+        <div className="space-y-6 w-full">
+            <div className="space-y-4 max-w-prose">
                 <p className="text-base text-(--color-text-body) leading-relaxed">
                     I study computer science at the{" "}
                     <strong className="text-(--color-text)">University of Waterloo</strong>{" "}
