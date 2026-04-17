@@ -3,7 +3,7 @@ import { GitHubIcon, ExternalLinkIcon } from "../icons";
 
 export default function ProjectsPanel() {
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl pb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 w-full pb-4">
             {projects.map((project, i) => {
                 const demoUrl = "demoUrl" in project ? project.demoUrl : null;
                 return (
