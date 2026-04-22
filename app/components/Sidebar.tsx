@@ -53,7 +53,7 @@ export default function Sidebar() {
                 return;
             }
 
-            const activationLine = getViewportHeight() * 0.28;
+            const activationLine = getViewportHeight() * 0.2;
             let nextActive = sections[0].id;
 
             if (isNearBottom()) {
@@ -145,7 +145,7 @@ export default function Sidebar() {
                 </div>
             </div>
 
-            <div className="flex items-center justify-center gap-1 sm:gap-5 py-3 shrink-0">
+            <div className="flex items-center justify-center gap-1 sm:gap-5 md:py-4 lg:py-6 shrink-0">
                 <a
                     href="mailto:michael.ferreira@uwaterloo.ca"
                     aria-label="Email"
@@ -191,7 +191,7 @@ export default function Sidebar() {
                 </a>
             </div>
 
-            <nav className="flex flex-col items-center gap-2.5 py-3 shrink-0">
+            <nav className="flex flex-col items-center gap-2 md:gap-4 lg:gap-6 py-4 mb-4 shrink-0">
                 {navItems.map(({ id, label }) => (
                     <button
                         key={id}
