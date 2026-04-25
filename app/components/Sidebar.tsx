@@ -124,7 +124,7 @@ export default function Sidebar() {
 
     return (
         <aside className="w-full lg:w-[320px] lg:shrink-0 lg:h-screen bg-(--color-bg) border-b-2 lg:border-b-0 lg:border-r-2 border-(--color-border-sidebar) flex flex-col overflow-hidden">
-            <div className="flex flex-col items-center pt-8 px-6 pb-2 shrink-0">
+            <div className="flex flex-col items-center pt-4 sm:pt-8 px-6 pb-2 shrink-0">
                 <div className="text-(--color-sparkle) text-sm tracking-widest mb-1 select-none">
                     ✦ &nbsp; ✦ &nbsp; ✦
                 </div>
@@ -191,7 +191,7 @@ export default function Sidebar() {
                 </a>
             </div>
 
-            <nav className="flex flex-col items-center gap-2 md:gap-4 lg:gap-6 py-4 mb-4 shrink-0">
+            <nav className="flex flex-col items-center gap-2 md:gap-4 shrink-0 mb-4 sm:mb-0">
                 {navItems.map(({ id, label }) => (
                     <button
                         key={id}
